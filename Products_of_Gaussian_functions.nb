@@ -1,0 +1,40 @@
+(* Plot products of Gaussian functions *)
+
+ia=0; (* Angular moment quantum number for the x-coordinate (0,1,2,...) of first Gaussian *)
+ib=0; (* Angular moment quantum number for the x-coordinate (0,1,2,...) of second Gaussian *)
+A=1; (* x-position of first Gaussian function *)
+B=-1; (* x-position of second Gaussian function *)
+rA=x-A; 
+rB=x-B;
+a=0.85; (* orbital exponent; large value means a tighter orbital*)
+b=0.85; (* orbital exponent; large value means a tighter orbital*)
+G1[x_]:=x^ia*Exp[-a*rA^2];
+G2[x_]:=x^ib*Exp[-b*rB^2];
+G3[x_]:=G1[x]*G2[x]; (* Calculate product of the two Gaussian functions *)
+Plot[{G1[x],G2[x],G3[x]},{x,-3,3}] 
+Simplify[G3[x]]
+
+
+
+
+
+
+(* Calculate products of Gaussian functions "manually" *)
+In[580]:= ia=0; (* Angular moment quantum number for the x-coordinate (0,1,2,...) of first Gaussian *)
+ib=0; (* Angular moment quantum number for the x-coordinate (0,1,2,...) of second Gaussian *)
+A=1; (* x-position of first Gaussian function *)
+B=-1; (* x-position of second Gaussian function *)
+rA=x-A; 
+rB=x-B;
+rP=x-Px;
+a=0.35; (* orbital exponent; large value means a tighter orbital*)
+b=0.35; (* orbital exponent; large value means a tighter orbital*)
+p=a+b ;(* total exponent *)
+mu=(a*b)/(a+b); (* reduced exponent *)
+XAB=A-B; (* relative Separation *)
+Px=(a*A+b*B)/p; (* "center of mass" *)
+G1[x_]:=x^ia*Exp[-a*rA^2];
+G2[x_]:=x^ib*Exp[-b*rB^2];
+G3[x_]:=Exp[-mu*XAB^2]*Exp[-p*rP^2]; (* product of two Gaussian functions *)
+Plot[{G1[x],G2[x],G3[x]},{x,-3,3}] 
+G3[x]
