@@ -35,6 +35,6 @@ XAB=A-B; (* relative Separation *)
 Px=(a*A+b*B)/p; (* "center of mass" *)
 G1[x_]:=x^ia*Exp[-a*rA^2];
 G2[x_]:=x^ib*Exp[-b*rB^2];
-G3[x_]:=Exp[-mu*XAB^2]*Exp[-p*rP^2]; (* product of two Gaussian functions *)
+G3[x_]:=Exp[-mu*XAB^2]*Exp[-p*rP^2]; (* formula of the product of two Gaussian functions *)
 Plot[{G1[x],G2[x],G3[x]},{x,-3,3}] 
 G3[x]
