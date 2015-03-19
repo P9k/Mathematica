@@ -20,7 +20,7 @@ Simplify[G3[x]]
 
 
 (* Calculate products of Gaussian functions "manually" *)
-In[580]:= ia=0; (* Angular moment quantum number for the x-coordinate (0,1,2,...) of first Gaussian *)
+ia=0; (* Angular moment quantum number for the x-coordinate (0,1,2,...) of first Gaussian *)
 ib=0; (* Angular moment quantum number for the x-coordinate (0,1,2,...) of second Gaussian *)
 A=1; (* x-position of first Gaussian function *)
 B=-1; (* x-position of second Gaussian function *)
