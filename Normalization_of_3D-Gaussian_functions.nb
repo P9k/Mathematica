@@ -24,6 +24,6 @@ i1=0;
 j1=0;
 k1=0;
 GA[x_,y_,z_]:=x^i1*Exp[-a1*(x-RA[[1]])^2]*y^j1*Exp[-a1*(y-RA[[2]])^2]*z^k1*Exp[-a1*(z-RA[[3]])^2]; (* formula for *)
-NA=((((2*i1-1)!!)/(4a)^i1)*Sqrt[Pi/(2*a)]*(((2*j1-1)!!)/(4a)^j1)*Sqrt[Pi/(2*a)]*(((2*k1-1)!!)/(4a)^k1)*Sqrt[Pi/(2*a)])^(-1/2) (* derived from the overlap of unnormalized GTOs for x-, y-, z-direction. See 9.2.1 in "Molecular Electronic-Structure Theory" by T. Helgaker *)
+NA=((((2*i1-1)!!)/(4a1)^i1)*Sqrt[Pi/(2*a1)]*(((2*j1-1)!!)/(4a1)^j1)*Sqrt[Pi/(2*a1)]*(((2*k1-1)!!)/(4a1)^k1)*Sqrt[Pi/(2*a1)])^(-1/2) (* derived from the overlap of unnormalized GTOs for x-, y-, z-direction. See 9.2.1 in "Molecular Electronic-Structure Theory" by T. Helgaker *)
 GAnorm[x_,y_,z_]=NA*GA[x,y,z]; (* normalized  3D Gaussian function *)
 Integrate[(GAnorm[x,y,z])^2,{x,-Infinity,Infinity},{y,-Infinity,Infinity},{z,-Infinity,Infinity}]
